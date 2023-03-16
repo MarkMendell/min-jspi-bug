@@ -1,0 +1,23 @@
+<!doctype html>
+<script>
+'use strict'
+window.addEventListener('load', async () => {
+
+	// Get WASM code
+	const response = await fetch('foo.wasm');
+	const bufarrwasm = await response.arrayBuffer();
+	const bufwasm = new Uint8Array(bufarrwasm);
+
+	// Start webassembly module
+	const resultwasm = await WebAssembly.instantiate(bufarrwasm);
+
+	// Run foo
+	resultwasm.instance.exports.foo(1);
+	const foo_promising = new WebAssembly.Function(
+		{parameters:["i32"], results:["externref"]},
+		resultwasm.instance.exports.foo_promising,
+		{promising:"first"}
+	);
+	foo_promising(2);
+});
+</script>
