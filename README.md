@@ -16,3 +16,7 @@ Steps to reproduce:
 6. Press continue.
 7. Hover your mouse over `argc` and notice that you can't see the value, and you can't inspect memory. This is the call with JSPI.
 8. Click refresh and the page should crash.
+
+
+https://user-images.githubusercontent.com/6289391/225479873-ac313a6a-a0bb-4658-8458-bcf8d6f65f09.mp4
+
