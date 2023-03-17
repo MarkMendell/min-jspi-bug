@@ -1,7 +1,7 @@
 	.text
 
 	.functype	foo (i32) -> (i32)
-	.functype	foo_promising (externref) -> (i32)
+	.functype	foo_promising (externref, i32) -> (i32)
 
 	.section .data.suspender,"",@
 	.globaltype	suspender, externref
