@@ -19,5 +19,3 @@ foo_promising:
 	call	foo
 	return
 	end_function
-.Lfunc_end0:
-	.size	foo_promising, .Lfunc_end0-foo_promising
